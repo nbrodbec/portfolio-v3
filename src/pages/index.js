@@ -1,118 +1,124 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import Image from 'next/image';
+import Hero from '../components/Hero.js';
+import Button from '../components/Button.js';
+import InlineTextLink from '../components/InlineTextLink.js';
+import TextImageFull from '@/components/Rows/TextImageFull.js';
+import Row from '@/components/Row.js';
+import ImageCell from '@/components/ImageCell.js';
+import bitmoji from '../assets/bitmoji.png';
+import bitmojiMobile from '../assets/bitmoji_mobile.png';
+import codeBlock from '../assets/codeblock.png';
+import circuit from '../assets/circuit.jpg';
+import programmer from '../assets/programmer.png';
+import student from '../assets/graduated.png';
+import videogame from '../assets/console.png';
+import guitar from '../assets/guitar.png';
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/pages/index.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    <div>
+      <Hero full>
+        <div className='grid md:grid-cols-3 flex-1'>
+          <div className='flex flex-col gap-4 justify-center text-center md:text-left md:col-span-2'>
+            <h1 className='font-poppins text-6xl font-bold text-white md:text-8xl lg:text-9xl'>Nicholas Brodbeck</h1>
+            <h2 className='font-poppins text-white text-2xl md:text-4xl'>Software Developer & Computer Science Student</h2>
+            <div className='mt-4'>
+              <Button href='/contact'>Contact Me</Button>
+            </div>
+            <div className='shrink flex flex-col place-items-center mx-6 md:hidden'>
+              <Image
+                className='object-scale-down'
+                src={bitmojiMobile}
+                alt="Nicholas Brodbeck's Bitmoji"
+              />
+            </div>
+          </div>
+          <div className='hidden relative md:block'>
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              className='absolute bottom-0 right-0 -mb-12'
+              src={bitmoji}
+              alt="Nicholas Brodbeck's Bitmoji"
             />
-          </a>
+          </div>
         </div>
-      </div>
+      </Hero>
+      <TextImageFull
+        title='What I do.'
+        alt='Codeblock'
+        img={codeBlock}
+      >
+        <p>
+          I have been involved with: full stack web apps, video games, machine learning R&D
+          and embedded programming with Arduino and Raspberry Pi.
+          <br /><br />
+          <InlineTextLink href='/projects'>Check out my work!</InlineTextLink>
+        </p>
+      </TextImageFull>
+      <TextImageFull
+        title='What I know.'
+        alt='Matrix effect'
+        img={circuit}
+        imgFirst
+      >
+        <p>
+          Languages I have worked with include JavaScript, Python, Lua, Java, C, SQL, HTML and CSS.
+          <br /><br />
+          Tools & Frameworks I have used include React.js, Node.js and Express.js, TailwindCSS, MongoDB and Git.
+        </p>
+      </TextImageFull>
+      <Row bg='bg-darkWhite'>
+        <h1 className='mb-8 text-center'>Who I am.</h1>
+        <div className='grid grid-rows-4 gap-8 md:grid-rows-2 md:grid-cols-2 lg:grid-rows-1 lg:grid-cols-4'>
+          <ImageCell
+            title='Web Developer'
+            src={programmer}
+            alt='Computer'
+            href='/projects'
+            prompt='My Websites'
+          >
+            <p>Creating beautiful responsive websites with great UX</p>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700/10 after:dark:from-sky-900 after:dark:via-[#0141ff]/40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+          </ImageCell>
+          <ImageCell
+            title='Game Developer'
+            src={videogame}
+            alt='Video Game Controller'
+            href='/projects'
+            prompt='My Games'
+          >
+            <p>Designing and developing video games that attract millions of users</p>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          </ImageCell>
+          <ImageCell
+            title='Student'
+            src={student}
+            alt='Student'
+            href='/about#education'
+            prompt='My Education'
+          >
+            <p>Computer Science Major at the University of Waterloo</p>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          </ImageCell>
+          <ImageCell
+            title='Musician'
+            src={guitar}
+            alt='Guitar'
+            href='/about#interests'
+            prompt='My Interests'
+          >
+            <p>Avid music enthusiast, guitarist and bassist</p>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Discover and deploy boilerplate example Next.js&nbsp;projects.
-          </p>
-        </a>
+          </ImageCell>
+        </div>
+      </Row>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <Row>
+        <div className='text-center space-y-4'>
+          <h1>Interested in working with me?</h1>
+          <p>I am always on the lookout for new projects or internship opportunities. Let me know!</p>
+          <Button bg='bg-highlight' href='/contact'>Contact Me</Button>
+        </div>
+      </Row>
+    </div>
   )
 }
