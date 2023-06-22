@@ -1,46 +1,30 @@
 [
-    7133467811
+    {
+        "placeId": 7133467811,
+        "universeId": 2763357351
+    },
+    {
+        "placeId": 8002617744,
+        "universeId": 3088473456
+    },
+    {
+        "placeId": 7071474933,
+        "universeId": 2727463616
+    },
+    {
+        "placeId": 6851155308,
+        "universeId": 2608101475
+    },
+    {
+        "placeId": 8434554277,
+        "universeId":  3225982262
+    },
+    {
+        "placeId": 8387200609,
+        "universeId": 3210489825
+    },
+    {
+        "placeId": 7969387046,
+        "universeId": 3078866788
+    }
 ]
-
-// curl -X 'GET' \
-//   'https://games.roblox.com/v1/games?universeIds={UNIVERSE_ID}' \
-//   -H 'accept: application/json'
-// 
-// {
-//     "data": [
-//       {
-//         "id": 2763357351,
-//         "rootPlaceId": 7133467811,
-//         "name": "Spin The Bottle",
-//         "description": "Game falsely terminated for \"suicidal content\".\nNew game is almost out: https://www.roblox.com/games/12155062325/Alpha-Spin-The-Wheel",
-//         "sourceName": null,
-//         "sourceDescription": null,
-//         "creator": {
-//           "id": 11349686,
-//           "name": "Skum Studio",
-//           "type": "Group",
-//           "isRNVAccount": false,
-//           "hasVerifiedBadge": false
-//         },
-//         "price": null,
-//         "allowedGearGenres": [
-//           "All"
-//         ],
-//         "allowedGearCategories": [],
-//         "isGenreEnforced": true,
-//         "copyingAllowed": false,
-//         "playing": 0,
-//         "visits": 39342460,
-//         "maxPlayers": 6,
-//         "created": "2021-07-22T01:03:08.603Z",
-//         "updated": "2023-06-07T23:34:21.103Z",
-//         "studioAccessToApisAllowed": false,
-//         "createVipServersAllowed": false,
-//         "universeAvatarType": "MorphToR6",
-//         "genre": "All",
-//         "isAllGenre": true,
-//         "isFavoritedByUser": true,
-//         "favoritedCount": 391834
-//       }
-//     ]
-//   }
