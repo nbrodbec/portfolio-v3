@@ -124,9 +124,9 @@ export default function About({ songs, podcasts, playing }) {
       </TextImageFull>
       <Row>
         <div className='grid grid-cols-1 place-items-center gap-4 md:grid-cols-3'>
-          <Image src={guitar1} alt='Guitar' height={300} />
-          <Image src={guitar2} alt='Guitar' height={300} />
-          <Image src={bass} alt='Guitar' height={300} />
+          <Image src={guitar1} alt='Guitar' height={300} className='shadow-lg' />
+          <Image src={guitar2} alt='Guitar' height={300} className='shadow-lg' />
+          <Image src={bass} alt='Guitar' height={300} className='shadow-lg' />
         </div>
       </Row>
       <Row bg='bg-darkWhite'>
