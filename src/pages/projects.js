@@ -3,6 +3,9 @@ import Row from "@/components/Row";
 import projects from '../content/games.json';
 import GameFrame from '@/components/GameFrame.js'
 import { useEffect, useState } from "react";
+import TextImage from "@/components/Rows/TextImage";
+import InlineTextLink from "@/components/InlineTextLink";
+import lineup from '../assets/avatar-lineup.png'
 
 export default function Projects({ infos, images }) {
 
@@ -11,9 +14,14 @@ export default function Projects({ infos, images }) {
             <Hero>
                 <h1 className='text-white text-center'>Projects</h1>
             </Hero>
-            <Row>
-                <h1>Games</h1>
-                <div className='mt-8 mx-auto justify-center gap-4 flex flex-row flex-wrap'>
+            <TextImage title='Games' img={lineup} alt='Lineup of Roblox Avatars'>
+                <p>
+                    Leveraging the <InlineTextLink href='https://www.roblox.com'>Roblox Platform</InlineTextLink>
+                    , I have shipped many games that have seen success.
+                </p>
+            </TextImage>
+            <Row bg='bg-darkWhite'>
+                <div className='mx-auto justify-center gap-4 flex flex-row flex-wrap'>
                     {infos.map((info, i) => <GameFrame key={i} info={info} image={images[i]} />)}
                 </div>
             </Row>
