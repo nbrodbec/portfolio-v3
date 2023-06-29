@@ -28,7 +28,13 @@ export default function About({ songs, podcasts, playing }) {
         title='Who am I?'
       >
         <p>
-          I am a 20 year-old student from Montreal, Canada, studying Computer Science at the University of Waterloo. I enjoy all things
+          I am a {(() => {
+            const date = new Date();
+            const year = date.getFullYear();
+            const month = date.getMonth();
+            const age = year - 2003 - Math.max(0, Math.min(1, 4 - month))
+            return age;
+          })()} year-old student from Montreal, Canada, studying Computer Science at the University of Waterloo. I enjoy all things
           tech and pride myself in the quality of my projects; both from the developer and the user perspective.
         </p>
       </TextImage>
