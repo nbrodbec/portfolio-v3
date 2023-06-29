@@ -1,9 +1,10 @@
 import Hero from "@/components/Hero";
 import Row from "@/components/Row";
 import projects from '../content/games.json';
+import GameFrame from '@/components/GameFrame.js'
 import { useEffect, useState } from "react";
 
-export default function Projects({ infos }) {
+export default function Projects({ infos, images }) {
 
     return (
         <div>
@@ -12,8 +13,8 @@ export default function Projects({ infos }) {
             </Hero>
             <Row>
                 <h1>Games</h1>
-                <div className='grid place-items-evenly grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
-
+                <div className='mt-8 mx-auto justify-center gap-4 flex flex-row flex-wrap'>
+                    {infos.map((info, i) => <GameFrame key={i} info={info} image={images[i]} />)}
                 </div>
             </Row>
             <Row bg='bg-highlight' full>
@@ -47,7 +48,8 @@ export default function Projects({ infos }) {
 export async function getStaticProps() {
     const ids = projects.map(project => project.universeId)// projects.map(project => project.universeId);
     const url = 'https://games.roblox.com/v1/games?' + new URLSearchParams({ universeIds: ids })
-    console.log(url)
+    const imgUrl = 'https://thumbnails.roblox.com/v1/games/icons?returnPolicy=PlaceHolder&size=256x256&format=Png&isCircular=false&' + new URLSearchParams({ universeIds: ids })
+
     const options = {
         method: 'GET',
         headers: {
@@ -59,9 +61,15 @@ export async function getStaticProps() {
         .then(info => info.data)
         .catch(console.log);
 
+    const imgs = await fetch(imgUrl, options)
+        .then(res => res.json())
+        .then(data => data.data.map(v => v.imageUrl))
+        .catch(console.log)
+
     return {
         props: {
-            infos: infos || null
+            infos: infos || null,
+            images: imgs || []
         },
         revalidate: 60
     }
