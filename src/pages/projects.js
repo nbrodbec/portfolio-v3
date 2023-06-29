@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import TextImage from "@/components/Rows/TextImage";
 import InlineTextLink from "@/components/InlineTextLink";
 import lineup from '../assets/avatar-lineup.png'
+import SectionMarker from "@/components/SectionMarker";
 
 export default function Projects({ infos, images }) {
 
@@ -14,6 +15,7 @@ export default function Projects({ infos, images }) {
             <Hero>
                 <h1 className='text-white text-center'>Projects</h1>
             </Hero>
+            <SectionMarker id='games' />
             <TextImage title='Games' img={lineup} alt='Lineup of Roblox Avatars'>
                 <p>
                     Leveraging the <InlineTextLink href='https://www.roblox.com'>Roblox Platform</InlineTextLink>
@@ -49,6 +51,13 @@ export default function Projects({ infos, images }) {
                     </div>
                 </div>
             </Row>
+
+            <SectionMarker id='websites' />
+            <TextImage title='Websites' img={lineup} alt=''>
+                <p>
+
+                </p>
+            </TextImage>
         </div>
     );
 }

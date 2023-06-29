@@ -73,7 +73,7 @@ export default function Home() {
             title='Web Developer'
             src={programmer}
             alt='Computer'
-            href='/projects'
+            href='/projects#websites'
             prompt='My Websites'
           >
             <p>Creating beautiful responsive websites with great UX</p>
@@ -83,7 +83,7 @@ export default function Home() {
             title='Game Developer'
             src={videogame}
             alt='Video Game Controller'
-            href='/projects'
+            href='/projects#games'
             prompt='My Games'
           >
             <p>Designing and developing video games that attract millions of users</p>
