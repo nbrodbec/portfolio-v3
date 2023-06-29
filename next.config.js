@@ -14,6 +14,12 @@ const nextConfig = {
         hostname: 'i.scdn.co',
         port: '',
         pathname: '/image/**'
+      },
+      {
+        protocol: 'https',
+        hostname: 'tr.rbxcdn.com',
+        port: '',
+        pathname: '/**'
       }
     ]
   }
