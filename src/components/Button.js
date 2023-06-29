@@ -12,7 +12,7 @@ const Button = ({ children, href, onClick, bg, disabled, ...props }) => {
       </button> :
 
       <button
-        className={'relative group p-3 inline-block drop-shadow-md ' + (bg || 'bg-accent')}
+        className={'pointer-events-auto relative group p-3 inline-block drop-shadow-md ' + (bg || 'bg-accent')}
         onClick={onClick || href && (() => router.push(href))}
         {...props}
       >
