@@ -8,9 +8,8 @@ const GameFrame = ({ info, image }) => {
 
   return (
     <div
-      className='relative shadow-lg overflow-hidden'
-      onMouseEnter={() => setSelected(true)}
-      onMouseLeave={() => setSelected(false)}
+      className='group/frame relative shadow-lg overflow-hidden'
+      onClick={() => setSelected(!selected)}
     >
       <Image
         src={image}
@@ -20,10 +19,12 @@ const GameFrame = ({ info, image }) => {
       />
       <div
         className={`p-2 flex flex-col justify-between gap-2 overflow-hidden text-center 
-                w-full absolute bg-primary transition-all h-full pointer-events-none ${selected ? 'top-0' : 'top-full'}`}
+                w-full absolute bg-primary transition-all h-full pointer-events-none
+                 group-hover/frame:top-0 ${selected ? 'top-0' : 'top-full'}`}
       >
         <h2 className='text-white'>{info.name}</h2>
-        <div className='text-white text-xl text-left grid grid-cols-2 gap-x-2'>
+        <span className='bg-white w-full h-[4px]' />
+        <div className='text-white text-xl py-2 text-left grid grid-cols-2 gap-x-2'>
           <h3 className='font-semibold text-right'>Live Players:</h3>
           <h3>{info.playing.toLocaleString()}</h3>
 
