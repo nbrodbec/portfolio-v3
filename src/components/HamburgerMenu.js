@@ -1,7 +1,7 @@
-import { useState } from 'react';
 
-const Hamburger = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Hamburger = ({ children, state, setState }) => {
+  const isOpen = state;
+  const setIsOpen = setState;
 
   return (
     <>
@@ -21,7 +21,7 @@ const Hamburger = ({ children }) => {
       <div className='col-span-2'>
         {
           isOpen &&
-          <div className='mt-4 w-full flex flex-col items-start block gap-2'>
+          <div className='mt-4 w-full flex flex-col block gap-2'>
             {children}
           </div>
         }
