@@ -1,23 +1,25 @@
 import TextLink from './TextLink.js';
 import Button from './Button.js';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import HamburgerMenu from './HamburgerMenu.js';
 import Link from 'next/link.js';
+import LayoutContext from '@/context/LayoutContext.js';
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
   const [open, setOpen] = useState(false);
+  const { heroEnd } = useContext(LayoutContext);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
       const y = Math.ceil(window.scrollY);
-      if (y < window.innerHeight) {
+      if (y < heroEnd) {
         setVisible(false)
       } else {
         setVisible(true)
       }
     })
-  }, []);
+  }, [heroEnd]);
 
   return (
     <div className={`fixed w-full grid place-items-center z-50 bg-secondary ${open && 'shadow-xl'}`}>
