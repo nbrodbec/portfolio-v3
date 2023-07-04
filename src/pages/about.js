@@ -234,15 +234,15 @@ export async function getStaticProps() {
   }
 
   const tracks = await fetch('https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=5&offset=0', options)
-    .then(res => res.json())
+    .then(res => res.ok ? res.json() : [])
     .then(data => data.items)
     .catch(console.log)
   const podcasts = await fetch('https://api.spotify.com/v1/me/shows?limit=5&offset=0', options)
-    .then(res => res.json())
+    .then(res => res.ok ? res.json() : [])
     .then(data => data.items.map(item => item.show))
     .catch(console.log)
   const playing = await fetch('https://api.spotify.com/v1/me/player/currently-playing', options)
-    .then(res => res.json())
+    .then(res => res.ok ? res.json() : null)
     .then(data => data && data.currently_playing_type == 'track' && data.is_playing ? data.item : null)
     .catch(console.log)
 
