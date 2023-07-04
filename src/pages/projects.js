@@ -5,8 +5,10 @@ import GameFrame from '@/components/GameFrame.js'
 import { useEffect, useState } from "react";
 import TextImage from "@/components/Rows/TextImage";
 import InlineTextLink from "@/components/InlineTextLink";
-import lineup from '../assets/avatar-lineup.png'
 import SectionMarker from "@/components/SectionMarker";
+import lineup from '../assets/avatar-lineup.png'
+import website from '../assets/website.png'
+import Button from "@/components/Button";
 
 export default function Projects({ infos, images }) {
 
@@ -33,7 +35,7 @@ export default function Projects({ infos, images }) {
                         <h1 className='text-white text-center row-span-2 text-6xl lg:text-7xl'>{projects.length}</h1>
                         <h2 className='text-white text-center font-bold'>PUBLISHED GAMES</h2>
                     </div>
-                    <div className='grid grid-rows-3 grid-cols-1 bg-[#3fb0bf] py-4'>
+                    <div className='relative grid grid-rows-3 bg-black bg-opacity-10 grid-cols-1 py-4'>
                         <h1 className='text-white text-center row-span-2 text-6xl lg:text-7xl'>
                             {infos ?
                                 infos.reduce((tot, info) => tot + info.playing, 0).toLocaleString()
@@ -53,11 +55,27 @@ export default function Projects({ infos, images }) {
             </Row>
 
             <SectionMarker id='websites' />
-            <TextImage title='Websites' img={lineup} alt=''>
+            <TextImage title='Websites' img={website} alt=''>
                 <p>
-
+                    I design my websites according to industry best practices, with a focus on an exceptional user experience.
+                </p>
+                <br />
+                <p>
+                    Using the latest technologies like <InlineTextLink href='https://react.dev'>React</InlineTextLink> and <InlineTextLink href='https://tailwindcss.com'>TailwindCSS</InlineTextLink>
+                    , my websites are made to be entirely responsive, dynamic
+                    and visually appealing.
                 </p>
             </TextImage>
+            <Row bg='bg-darkWhite'>
+                <h2 className='text-center font-semibold text-zinc-500'>Website Examples Coming Soon...</h2>
+            </Row>
+            <Row>
+                <div className='text-center space-y-4'>
+                    <h1>Interested in working with me?</h1>
+                    <p>I am always on the lookout for new projects or internship opportunities. Let me know!</p>
+                    <Button bg='bg-highlight' href='/contact'>Contact Me</Button>
+                </div>
+            </Row>
         </div>
     );
 }
