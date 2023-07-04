@@ -38,14 +38,7 @@ export default function Contact() {
           <p>
             Interested in discussing an opportunity with me, or just want to chat? Kindly use the form below to send me an email.
             I will do my best to answer as soon as I can!
-            <br /><br />
-            Or, connect with me on social media:
           </p>
-          <div className='grow min-h-[20%] flex items-end justify-center flex-row gap-8 max-h-16 md:justify-start'>
-            <ImageLink src={linkedin} alt='LinkedIn' href='https://linkedin.com/in/nbrodbeck' className='aspect-square h-full' />
-            <ImageLink src={github} alt='GitHub' href='https://github.com/nbrodbec' className='aspect-square h-full' />
-            <ImageLink src={instagram} alt='GitHub' href='https://instagram.com/nicky_brod' className='aspect-square h-full' />
-          </div>
         </div>
       </TextImage>
 
@@ -147,6 +140,19 @@ export default function Contact() {
                 <CopyText value={process.env.NEXT_PUBLIC_PGP_KEY}>Copy Public Key</CopyText>
               </div>
             </div>
+          </div>
+        </div>
+      </Row>
+      <Row full bg='bg-accent'>
+        <div className='grid grid-rows-3 grid-cols-1 text-center md:grid-rows-1 md:grid-cols-3'>
+          <div className='py-4 h-32'>
+            <ImageLink src={linkedin} alt='LinkedIn' href='https://linkedin.com/in/nbrodbeck' className='aspect-square h-full' />
+          </div>
+          <div className='py-4 h-32 bg-black bg-opacity-10'>
+            <ImageLink src={github} alt='GitHub' href='https://github.com/nbrodbec' className='aspect-square h-full' />
+          </div>
+          <div className='py-4 h-32'>
+            <ImageLink src={instagram} alt='GitHub' href='https://instagram.com/nicky_brod' className='aspect-square h-full' />
           </div>
         </div>
       </Row>
