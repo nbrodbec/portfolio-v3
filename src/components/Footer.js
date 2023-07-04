@@ -48,9 +48,9 @@ const Footer = () => {
           <div className='flex flex-col gap-2 items-center  md:items-start'>
             <h1 className='text-white text-xl mb-2'>Socials</h1>
             <div className='flex flex-row gap-4 items-center'>
-              <ImageLink src={linkedin} alt='LinkedIn' href='https://linkedin.com/in/nbrodbeck' className='w-8 h-8 invert brightness-0' />
-              <ImageLink src={github} alt='GitHub' href='https://github.com/nbrodbec' className='w-8 h-8 invert brightness-0' />
-              <ImageLink src={instagram} alt='GitHub' href='https://instagram.com/nicky_brod' className='w-8 h-8 invert brightness-0' />
+              <ImageLink src={linkedin} alt='LinkedIn' href='https://linkedin.com/in/nbrodbeck' className='w-8 h-8' />
+              <ImageLink src={github} alt='GitHub' href='https://github.com/nbrodbec' className='w-8 h-8' />
+              <ImageLink src={instagram} alt='GitHub' href='https://instagram.com/nicky_brod' className='w-8 h-8' />
             </div>
           </div>
         </div>
