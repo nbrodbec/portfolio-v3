@@ -105,7 +105,7 @@ export default function Contact() {
                 <p className='text-white text-center'>{status}</p>
               </div>
           }
-          <div className='flex flex-col gap-4 justify-center text-center w-full h-full '>
+          <div className='flex flex-col gap-4 justify-center text-center'>
             <h1 className='text-white text-2xl lg:text-3xl'>Psst!</h1>
             <p className='text-white'>
               (Need to communicate securely with me? Encrypt your email before sending)
