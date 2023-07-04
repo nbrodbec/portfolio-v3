@@ -48,7 +48,7 @@ export default function Home() {
         img={codeBlock}
       >
         <p>
-          I have been involved with: full stack web apps, video games, machine learning R&D
+          I have experience with full stack web apps, video games, machine learning R&D
           and embedded programming with Arduino and Raspberry Pi.
           <br /><br />
           <InlineTextLink href='/projects'>Check out my work!</InlineTextLink>
@@ -56,7 +56,7 @@ export default function Home() {
       </TextImageFull>
       <TextImageFull
         title='What I know.'
-        alt='Matrix effect'
+        alt='Circuit board'
         img={circuit}
         imgFirst
       >
