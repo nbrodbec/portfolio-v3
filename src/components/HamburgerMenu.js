@@ -1,4 +1,3 @@
-
 const Hamburger = ({ children, state, setState }) => {
   const isOpen = state;
   const setIsOpen = setState;
