@@ -4,21 +4,30 @@ import { useState, useEffect, useContext } from 'react';
 import HamburgerMenu from './HamburgerMenu.js';
 import Link from 'next/link.js';
 import LayoutContext from '@/context/LayoutContext.js';
+import { useRouter } from 'next/router.js';
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
   const [open, setOpen] = useState(false);
   const { heroEnd } = useContext(LayoutContext);
+  const route = useRouter().asPath;
+
+  useEffect(() => setOpen(false), [route])
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    const handleScroll = () => {
       const y = Math.ceil(window.scrollY);
       if (y < heroEnd) {
         setVisible(false)
       } else {
         setVisible(true)
       }
-    })
+    }
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [heroEnd]);
 
   return (
