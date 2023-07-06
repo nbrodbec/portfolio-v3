@@ -207,7 +207,7 @@ export default function About({ songs, podcasts, playing }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const refreshToken = process.env.SPOTIFY_REFRESH_TOKEN;
   const clientId = process.env.SPOTIFY_CLIENT_ID;
   const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;

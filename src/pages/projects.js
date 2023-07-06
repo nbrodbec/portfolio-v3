@@ -80,7 +80,7 @@ export default function Projects({ infos, images }) {
     );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const ids = projects.map(project => project.universeId)// projects.map(project => project.universeId);
     const url = 'https://games.roblox.com/v1/games?' + new URLSearchParams({ universeIds: ids })
     const imgUrl = 'https://thumbnails.roblox.com/v1/games/icons?returnPolicy=PlaceHolder&size=256x256&format=Png&isCircular=false&' + new URLSearchParams({ universeIds: ids })
