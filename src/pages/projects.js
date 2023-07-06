@@ -105,7 +105,6 @@ export async function getServerSideProps() {
         props: {
             infos: infos || null,
             images: imgs || []
-        },
-        revalidate: 60
+        }
     }
 }

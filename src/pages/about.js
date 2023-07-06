@@ -251,7 +251,6 @@ export async function getServerSideProps() {
       songs: tracks || [],
       podcasts: podcasts || [],
       playing: playing || null
-    },
-    revalidate: 60
+    }
   }
 }
