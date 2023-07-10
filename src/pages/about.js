@@ -233,7 +233,7 @@ export async function getServerSideProps() {
     }
   }
 
-  const tracks = await fetch('https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=5&offset=0', options)
+  const tracks = await fetch('https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=5&offset=0', options)
     .then(res => res.ok ? res.json() : [])
     .then(data => data.items)
     .catch(console.log)
