@@ -14,7 +14,7 @@ const Hero = ({ children, full }) => {
     }, []);
 
     return (
-        <div className={`-z-10 sticky top-0 block flex flex-col items-center bg-secondary ${full ? 'min-h-screen' : ''} pt-12`}>
+        <div className={`sticky top-0 block flex flex-col items-center bg-secondary ${full ? 'min-h-screen' : ''} pt-12`}>
             <Container>
                 {children}
             </Container>
