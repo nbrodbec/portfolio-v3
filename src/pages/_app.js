@@ -10,6 +10,7 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     const start = () => {
       setLoading(true);
+      window.scrollTo(0, 0);
     };
     const end = () => {
       setLoading(false);
