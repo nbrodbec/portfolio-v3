@@ -115,7 +115,7 @@ export default function Contact() {
               disabled={status !== undefined || encrypted}
               onClick={async () => {
                 const item = form.current.children.msg;
-                if (item.trim === '') return;
+                if (item.value.trim() === '') return;
                 const encrypted = await openpgp.encrypt({
                   message: await openpgp.createMessage({ text: item.value }),
                   encryptionKeys: await openpgp.readKey({ armoredKey: process.env.NEXT_PUBLIC_PGP_KEY })
