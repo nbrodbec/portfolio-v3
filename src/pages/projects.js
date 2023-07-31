@@ -67,7 +67,44 @@ export default function Projects({ infos, images }) {
                 </p>
             </TextImage>
             <Row bg='bg-darkWhite'>
-                <h2 className='text-center font-semibold text-zinc-500'>Website Examples Coming Soon...</h2>
+                <div className='space-y-8'>
+                    <div className='flex flex-col gap-4 text-center md:text-left pb-8 border-b-4'>
+                        <h2>Wedding RSVP Site</h2>
+                        <p>A website designed for allowing wedding guests to submit their RSVPs.</p>
+                        <div>
+                            <Button
+                                bg='bg-secondary'
+                                href='https://mock-wedding.vercel.app'
+                            >
+                                Visit Website
+                            </Button>
+                        </div>
+                    </div>
+                    <div className='flex flex-col gap-4 text-center md:text-left pb-8 border-b-4'>
+                        <h2>Baby Shower RSVP Site</h2>
+                        <p>A website designed for allowing baby shower guests to submit their RSVPs.</p>
+                        <div>
+                            <Button
+                                bg='bg-secondary'
+                                href='https://www.aliciasbabyshower.com'
+                            >
+                                Visit Website
+                            </Button>
+                        </div>
+                    </div>
+                    <div className='flex flex-col gap-4 text-center md:text-left'>
+                        <h2>www.nbrodbeck.com</h2>
+                        <p>This portfolio website was designed to showcase myself, my abilities, my projects and my interests.</p>
+                        <div>
+                            <Button
+                                bg='bg-secondary'
+                                href='https://www.nbrodbeck.com'
+                            >
+                                Visit Website
+                            </Button>
+                        </div>
+                    </div>
+                </div>
             </Row>
             <Row>
                 <div className='text-center space-y-4'>
