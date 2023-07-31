@@ -23,6 +23,7 @@ export default function Contact() {
   const captcha = useRef();
   const [status, setStatus] = useState();
   const [encrypted, setEncrypted] = useState(false);
+  const [message, setMessage] = useState('');
 
   return (
     <div>
@@ -80,7 +81,7 @@ export default function Contact() {
               <Input type='text' id='name' name='name' required>Your Name*</Input>
               <Input type='email' id='from' name='from' required>Your Email Address*</Input>
               <Input type='text' id='subject' name='subject' required>Subject*</Input>
-              <Input type='text' id='msg' name='msg' resizeable required>How may I help you?*</Input>
+              <Input type='text' id='msg' name='msg' resizeable required disabled={encrypted}>How may I help you?*</Input>
               <div className='flex flex-col gap-4 justify-center items-center md:flex-row md:justify-start'>
                 {status === 'pending' ? <Wheel /> :
                   <Button type='submit'>
@@ -112,19 +113,27 @@ export default function Contact() {
             </p>
             <Button
               bg='bg-highlight'
-              disabled={status !== undefined || encrypted}
+              disabled={status !== undefined}
               onClick={async () => {
-                const item = form.current.children.msg;
-                if (item.value.trim() === '') return;
-                const encrypted = await openpgp.encrypt({
-                  message: await openpgp.createMessage({ text: item.value }),
-                  encryptionKeys: await openpgp.readKey({ armoredKey: process.env.NEXT_PUBLIC_PGP_KEY })
-                });
-                item.value = encrypted;
-                setEncrypted(true);
+                if (encrypted) {
+                  setEncrypted(false);
+                  const item = form.current.children.msg;
+                  item.value = message;
+                } else {
+                  const item = form.current.children.msg;
+                  const msg = item.value;
+                  if (msg.trim() === '') return;
+                  const encrypted = await openpgp.encrypt({
+                    message: await openpgp.createMessage({ text: msg }),
+                    encryptionKeys: await openpgp.readKey({ armoredKey: process.env.NEXT_PUBLIC_PGP_KEY })
+                  });
+                  item.value = encrypted;
+                  setEncrypted(true);
+                  setMessage(msg);
+                }
               }}
             >
-              {encrypted ? 'Encrypted!' : 'Encrypt'}
+              {encrypted ? 'Decrypt' : 'Encrypt'}
             </Button>
             <div className='mt-4 flex flex-row items-center justify-evenly'>
               <div className='flex flex-row items-center gap-2'>
