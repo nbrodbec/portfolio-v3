@@ -141,9 +141,9 @@ export default function About({ songs, podcasts, playing }) {
           {songs.map(track => (
             <div key={track.id} className='flex flex-row gap-4 items-center'>
               <ImageLink
-                src={track.album.images[0].url}
-                alt={track.album.name}
-                href={track.preview_url}
+                src={track.album.images?.[0]?.url || ''}
+                alt={track.album?.name || 'Error Loading Album'}
+                href={track.preview_url || '/'}
                 className='w-16 h-16 shadow-lg'
               />
               <div className='max-w-xs'>
@@ -151,7 +151,7 @@ export default function About({ songs, podcasts, playing }) {
                   {track.name}
                   <br />
                   <span className='font-thin'>
-                    {track.artists[0].name}
+                    {track.artists?.[0]?.name || 'Error Loading Artist'}
                   </span>
                 </p>
               </div>
@@ -163,9 +163,9 @@ export default function About({ songs, podcasts, playing }) {
           {podcasts.map(track => (
             <div key={track.id} className='flex flex-row gap-4 items-center'>
               <ImageLink
-                src={track.images[0].url}
+                src={track.images?.[0]?.url}
                 alt={track.name}
-                href={track.external_urls.spotify}
+                href={track.external_urls.spotify || '/'}
                 className='w-16 h-16 flex-none shadow-lg'
               />
               <div className='max-w-xs'>
@@ -186,17 +186,17 @@ export default function About({ songs, podcasts, playing }) {
           <h1 className='text-white mb-8 text-center'>Currently Listening To...</h1>
           <div key={playing.id} className='mx-auto flex flex-row gap-4 items-center'>
             <ImageLink
-              src={playing.album.images?.[0]?.url || ''}
+              src={playing.album?.images?.[0]?.url || ''}
               alt={playing.album?.name || 'Error Loading Album'}
-              href={playing.preview_url}
+              href={playing.preview_url || '/'}
               className='w-32 h-32 flex-none shadow-lg'
             />
             <div className='max-w-xs'>
               <p className='text-white text-2xl text-ellipsis'>
-                {playing?.name || 'Error Loading Title'}
+                {playing.name || 'Error Loading Title'}
                 <br />
                 <span className='font-thin'>
-                  {playing.artists?.[0].name || 'Error Loading Artist'}
+                  {playing.artists?.[0]?.name || 'Error Loading Artist'}
                 </span>
               </p>
             </div>
