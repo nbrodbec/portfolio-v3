@@ -186,17 +186,17 @@ export default function About({ songs, podcasts, playing }) {
           <h1 className='text-white mb-8 text-center'>Currently Listening To...</h1>
           <div key={playing.id} className='mx-auto flex flex-row gap-4 items-center'>
             <ImageLink
-              src={playing.album.images[0].url}
-              alt={playing.album.name}
+              src={playing.album.images?.[0]?.url || ''}
+              alt={playing.album?.name || 'Error Loading Album'}
               href={playing.preview_url}
               className='w-32 h-32 flex-none shadow-lg'
             />
             <div className='max-w-xs'>
               <p className='text-white text-2xl text-ellipsis'>
-                {playing.name}
+                {playing?.name || 'Error Loading Title'}
                 <br />
                 <span className='font-thin'>
-                  {playing.artists[0].name}
+                  {playing.artists?.[0].name || 'Error Loading Artist'}
                 </span>
               </p>
             </div>
