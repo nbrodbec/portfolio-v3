@@ -4,6 +4,7 @@ import Head from 'next/head.js';
 import { useEffect, useState } from 'react';
 import Router from 'next/router';
 import Loading from '../components/Loading.js';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App({ Component, pageProps }) {
   const [loading, setLoading] = useState(false);
@@ -40,6 +41,7 @@ export default function App({ Component, pageProps }) {
           : <Component {...pageProps} />
         }
       </Layout>
+      <Analytics />
     </>
   );
 }
