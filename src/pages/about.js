@@ -207,7 +207,11 @@ export default function About({ songs, podcasts, playing }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ res }) {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=60'
+  );
   const refreshToken = process.env.SPOTIFY_REFRESH_TOKEN;
   const clientId = process.env.SPOTIFY_CLIENT_ID;
   const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;

@@ -117,7 +117,12 @@ export default function Projects({ infos, images }) {
     );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ res }) {
+    res.setHeader(
+        'Cache-Control',
+        'public, s-maxage=60, stale-while-revalidate=300'
+    );
+
     const ids = projects.map(project => project.universeId)// projects.map(project => project.universeId);
     const url = 'https://games.roblox.com/v1/games?' + new URLSearchParams({ universeIds: ids })
     const imgUrl = 'https://thumbnails.roblox.com/v1/games/icons?returnPolicy=PlaceHolder&size=256x256&format=Png&isCircular=false&' + new URLSearchParams({ universeIds: ids })
