@@ -135,7 +135,7 @@ export default function Projects({ infos, images }) {
           With the dawn of the decentralized web upon us, it is important now
           more than than ever to stay in the loop on the latest development
           technologies. From Smart Contracts to Dapps, I am fully capable of
-          tackling a wide variety of web3 projects.
+          tackling a wide variety of blockchain projects.
         </p>
         <br />
         <p>
@@ -143,7 +143,7 @@ export default function Projects({ infos, images }) {
           <InlineTextLink href='https://react.org'>Hardhat</InlineTextLink> and{' '}
           <InlineTextLink href='https://soliditylang.org'>
             Solidity
-          </InlineTextLink>
+          </InlineTextLink> under my belt
           , I am well equipped to take on development for the future of the
           internet.
         </p>
