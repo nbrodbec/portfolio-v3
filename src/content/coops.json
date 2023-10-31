@@ -4,5 +4,11 @@
         "role": "Software Engineering Research Assistant",
         "logo": "/hrr.jpg",
         "url": "http://www.health-rehab-research.ca/"
+    },
+    {
+        "company": "Wrmth",
+        "role": "Embedded Firmware Engineer",
+        "logo": "/wrmth.jpg",
+        "url": "http://www.wrmth.ca/"
     }
 ]
