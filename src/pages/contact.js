@@ -17,6 +17,7 @@ import instagram from '../assets/Instagram-Mark.svg';
 import key from '../assets/key.png'
 import book from '../assets/book.png'
 import Wheel from '@/components/Wheel';
+import Link from 'next/link';
 
 export default function Contact() {
   const form = useRef();
@@ -153,15 +154,21 @@ export default function Contact() {
         </div>
       </Row>
       <Row full bg='bg-accent'>
-        <div className='grid grid-rows-3 grid-cols-1 text-center md:grid-rows-1 md:grid-cols-3'>
-          <div className='py-4 h-32'>
-            <ImageLink src={linkedin} alt='LinkedIn' href='https://linkedin.com/in/nbrodbeck' className='aspect-square h-full' />
+        <div className='grid h-32 grid-rows-3 grid-cols-1 text-center md:grid-rows-1 md:grid-cols-3'>
+          <div className='relative bg-black bg-opacity-0 hover:bg-opacity-20 transition'>
+            <Link href='https://linkedin.com/in/nbrodbeck'>
+              <Image src={linkedin} alt='LinkedIn' className='aspect-square h-full py-4' fill />
+            </Link>
           </div>
-          <div className='py-4 h-32 bg-black bg-opacity-10'>
-            <ImageLink src={github} alt='GitHub' href='https://github.com/nbrodbec' className='aspect-square h-full' />
+          <div className='relative bg-black bg-opacity-10 hover:bg-opacity-20 transition'>
+            <Link href='https://github.com/nbrodbec'>
+              <Image src={github} alt='Github' className='aspect-square h-full py-4' fill />
+            </Link>
           </div>
-          <div className='py-4 h-32'>
-            <ImageLink src={instagram} alt='GitHub' href='https://instagram.com/nicky_brod' className='aspect-square h-full' />
+          <div className='relative bg-black bg-opacity-0 hover:bg-opacity-20 transition'>
+            <Link href='https://instagram.com/nicky_brod'>
+              <Image src={instagram} alt='Instagram' className='aspect-square h-full py-4' fill />
+            </Link>
           </div>
         </div>
       </Row>
