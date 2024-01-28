@@ -49,7 +49,7 @@ export default function Home() {
       >
         <p>
           I have experience with full stack web apps, video games, machine learning R&D
-          and embedded programming with Arduino and Raspberry Pi.
+          and embedded systems.
           <br /><br />
           <InlineTextLink href='/projects'>Check out my work!</InlineTextLink>
         </p>
@@ -61,9 +61,9 @@ export default function Home() {
         imgFirst
       >
         <p>
-          Languages I have worked with include JavaScript, Python, Lua, Java, C, SQL, HTML and CSS.
+          I am experienced with a vast array of technologies and am always looking to pick up new ones.
           <br /><br />
-          Tools & Frameworks I have used include React.js, Node.js and Express.js, TailwindCSS, MongoDB and Git.
+          In particular, I've worked extensively with Node.js, React.js and TailwindCSS for web projects, C and C++ for embedded systems projects, Python for machine learning projects and MongoDB for projects involving backend databases.
         </p>
       </TextImageFull>
       <Row bg='bg-darkWhite'>
