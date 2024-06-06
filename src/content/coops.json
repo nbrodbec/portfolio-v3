@@ -10,5 +10,11 @@
         "role": "Embedded Firmware Engineer",
         "logo": "/wrmth.jpg",
         "url": "http://www.wrmth.ca/"
+    },
+    {
+        "company": "MDA Space",
+        "role": "Software Engineering Student",
+        "logo": "/mdaspace_logo.jpg",
+        "url": "http://www.mda.space/"
     }
 ]
